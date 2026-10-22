@@ -21,4 +21,4 @@ if __name__ == "__main__":
             print("Завершение программы.")
             break
         answer = get_response(question, client)
-        print("AI:", answer.output_text)
+        print("AI:", answer)

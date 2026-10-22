@@ -22,7 +22,7 @@ envpromts = [
 client = OpenAI(api_key=api_key)
 
 def get_response(text: str, client: OpenAI6, instructionprompt: str):
-    response = client.responses.create(model="gpt-6-luna", input=text, instructions=instructionprompt, reasoning={"effort": "none"})
+    response = client.responses.create(model="gpt-6-luna", input=text, instructions=instructionprompt, reasoning={"effort": "high"})
     return response
 
 def choose_prompt():
