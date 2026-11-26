@@ -88,7 +88,7 @@ for test in TESTS:
                     "content": test["prompt"],
                 }
             ],
-            temperature=0.2,
+            temperature=3.0,
             max_tokens=500,
         )
 
@@ -103,7 +103,7 @@ for test in TESTS:
             "prompt": test["prompt"],
             "answer": answer,
             "time_seconds": round(elapsed, 2),
-            "temperature": 0.2,
+            "temperature": 3.0,
             "status": "success",
             "finish_reason": response.choices[0].finish_reason,
         })
@@ -118,13 +118,13 @@ for test in TESTS:
             "time_seconds": round(
                 time.perf_counter() - start, 2
             ),
-            "temperature": 0.2,
+            "temperature": 3.0,
             "status": "error",
             "error": str(error),
         })
 output_dir = Path("results")
 output_dir.mkdir(exist_ok=True)
-filename = output_dir / f"{MODEL}_results.json"
+filename = output_dir / f"{MODEL}_results2.json"
 
 with open(filename, "w", encoding="utf-8") as file:
     json.dump(results, file, ensure_ascii=False, indent=4)
